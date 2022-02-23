@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -53,5 +54,6 @@ module.exports = {
     static: path.join(__dirname, 'dist'), //cambio de nombre, no es contentBase
     compress: true,
     port: 3000,
+    historyApiFallback: true,
   },
 }
