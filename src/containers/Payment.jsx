@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/components/Payment.css';
+import React from 'react'
+import '../styles/components/Payment.css'
 
 const Payments = () => {
   return (
@@ -13,4 +13,4 @@ const Payments = () => {
   );
 };
 
-export default Payments;
+export default Payments

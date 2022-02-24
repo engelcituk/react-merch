@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/components/Success.css';
+import React from 'react'
+import '../styles/components/Success.css'
 
 const Success = () => {
   return (
@@ -13,4 +13,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default Success
