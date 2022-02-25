@@ -18,9 +18,17 @@ const useInitiaState = () => {
         })
     }
 
+    const addToBuyer = payload => {
+        setState({
+            ...state,
+            buyer:[...state.buyer, payload]
+        })
+    }
+
     return {
         addToCart, //retorno los metodos
         removeFromCart,
+        addToBuyer,
         state //y el estado
     }
 }
