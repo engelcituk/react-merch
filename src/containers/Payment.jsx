@@ -24,14 +24,14 @@ const Payments = () => {
 
   const handlePaymentSuccess = ( data ) => {
     console.log( data )
-    if( data === 'COMPLETED' ){
+    if( data.status === 'COMPLETED' ){
       const newOrder = {
         buyer,
         product: cart,
         payment: data
       }
-      addNewOrder( newOrder )
-      navigate('/checkout/success')
+      addNewOrder( newOrder, navigate('/checkout/success'))
+      // navigate('/checkout/success')
     }
   }
 
@@ -60,10 +60,11 @@ const Payments = () => {
             paypalOptions={paypalOptions}
             buttonStyles={buttonStyles}
             amount={handleSumTotal(cart)}
-            onPaymentStart={()=> console.log('startPayment')}
-            onPaymentSuccess={ data => handlePaymentSuccess( data) }
-            onPaymentError={ error => console.log( error ) }
-            onPaymentCancel={ data => console.log( data ) }
+            onPaymentStart={() => console.log('Start Payment')}
+            // onPaymentStart={()=> console.log('startPayment')}
+            onSuccess={ data => handlePaymentSuccess( data) }
+            onError={ error => console.log( error ) }
+            onCancel={ data => console.log( data ) }
           />
         </div>
       </div>
