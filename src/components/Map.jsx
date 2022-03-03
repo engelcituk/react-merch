@@ -1,18 +1,18 @@
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import React from 'react'
 
-const Map = () => {
+const Map = ( {data} ) => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'AIzaSyAVhQ9J7dFCKKsXhNTFJKUgmw6vWXri7wg'
+        googleMapsApiKey: 'AIzaSyBDItVqQ-MV8P_JJluFkbVWlB0PeAAuuN0'
       })
     const mapStyles={
         height:"50vh",
         with:"100%",    
     }
     const defaultCenter={
-        lat:20.676960,
-        lng:-87.124232
+        lat: data.lat,
+        lng: data.lng
     }
     
     const [map, setMap] = React.useState(null)
